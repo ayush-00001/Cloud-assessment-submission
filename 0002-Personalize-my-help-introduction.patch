@@ -1,0 +1,25 @@
+From c1849f4b8797d61fe179804450c69ed2cbf34b7f Mon Sep 17 00:00:00 2001
+From: Ayush <ayush@example.com>
+Date: Thu, 29 Oct 2026 19:45:22 +0000
+Subject: [PATCH 2/3] Personalize my help introduction
+
+---
+ src/main/java/FestPass.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/main/java/FestPass.java b/src/main/java/FestPass.java
+index 1485f18..74ead3c 100644
+--- a/src/main/java/FestPass.java
++++ b/src/main/java/FestPass.java
+@@ -130,7 +130,7 @@ public final class FestPass {
+ 
+     private static void usage(PrintStream out) {
+         out.println("""
+-                FestPass - campus event registration
++                FestPass - campus event registration, personalized by Ayush
+                 Usage: java -jar build/festpass.jar [--data FILE] COMMAND
+                   add-event ID "TITLE" CAPACITY
+                   list
+-- 
+2.43.0
+

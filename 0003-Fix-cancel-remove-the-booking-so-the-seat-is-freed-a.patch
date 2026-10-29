@@ -1,0 +1,26 @@
+From 9ff385fad5e2569c44170f7b03026418adbcd503 Mon Sep 17 00:00:00 2001
+From: Ayush <ayush@example.com>
+Date: Thu, 29 Oct 2026 19:45:39 +0000
+Subject: [PATCH 3/3] Fix cancel(): remove the booking so the seat is freed and
+ the cancellation persists
+
+---
+ src/main/java/BookingService.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/main/java/BookingService.java b/src/main/java/BookingService.java
+index 9b95490..9b2c258 100644
+--- a/src/main/java/BookingService.java
++++ b/src/main/java/BookingService.java
+@@ -65,7 +65,7 @@ public final class BookingService {
+     public void cancel(String eventId, String studentId) {
+         validateId(studentId);
+         Registration event = requireEvent(eventId);
+-        if (!event.students.contains(studentId)) {
++        if (!event.students.remove(studentId)) {
+             throw new IllegalArgumentException("No booking for student: " + studentId);
+         }
+     }
+-- 
+2.43.0
+
